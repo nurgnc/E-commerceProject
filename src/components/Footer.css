@@ -1,0 +1,13 @@
+.main-footer {
+    color: rgb(126, 119, 119);
+    background-color: white;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.main-footer  ul li .footer-link {
+    color:rgb(126, 119, 119);
+}
+
