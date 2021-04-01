@@ -13,7 +13,20 @@ const RelatedProducts = () => {
                 <Link to="/onecikanlar"><button>TÜM ÖNE ÇIKANLAR <FaArrowRight /></button></Link>
             </div>
             <div className="products container">
-                <CardRelated />
+                <Row>
+                    <Col>
+                        <CardRelated />
+                    </Col>
+                    <Col>
+                        <CardRelated />
+                    </Col>
+                    <Col>
+                        <CardRelated />
+                    </Col>
+                    <Col>
+                        <CardRelated />
+                    </Col>
+                </Row>
             </div>
         </>
     )
