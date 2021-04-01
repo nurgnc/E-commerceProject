@@ -15,8 +15,8 @@ const Header = () => {
             className="container swiper-slider"
             navigation
             pagination={{ clickable: true }}
-            spaceBetween={50}
-            slidesPerView={3}
+            spaceBetween={30}
+            slidesPerView={2}
         >
         {SliderImages.map((slide, index) => {
             return ( 

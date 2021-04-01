@@ -1,0 +1,17 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.title p {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.title button {
+    border: none;
+    background: none;
+    color: #1564C0;
+    font-weight: 600;
+}
