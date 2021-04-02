@@ -1,6 +1,5 @@
 const INITIAL_STATE = {
-    cart: [],
-    message: ""
+    cart: []
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
