@@ -81,7 +81,7 @@ const BestSellerProducts = () => {
                 {bestSeller.map(data => {
                         return (
                             <div className="card" key={data.code}>
-                                <Link to={`/onecikanlar/${data.dest_url}`}>
+                                <Link to={`/${data.dest_url}`}>
                                     <img src={data.img} alt={data.title}/>
                                 </Link>
                                 <div className="content">
@@ -94,7 +94,7 @@ const BestSellerProducts = () => {
                                     </h6>
                                     
                                     <span className="data-price">&#8378; {data.price}</span>
-                                    <div style={{background: '#cac7c7'}}>
+                                    <div style={{background: '#dbd5d5'}}>
                                             {(data.samedayshipping = "true" ? "Bugün Kargoda" : "")}
                                     </div>
                                 </div>

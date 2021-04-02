@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 const NavBar = (props) => {
 
     return (
-        <div className="navbar container px-5" style={{ background: "#1564C0" }}>
+        <div className="navbar fixed-top container px-5" style={{ background: "#1564C0" }}>
             <Navbar expand="lg">
                 <Navbar.Brand href="/">
                     <img src="/vatanlogo.svg" width="120" height="50" className="d-inline-block align-top" alt="logo" />

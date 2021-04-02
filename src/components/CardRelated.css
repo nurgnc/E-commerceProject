@@ -44,12 +44,13 @@
 }
 
 .card h6 a:hover {
-    color: crimson;    
+    color: #1564C0;    
 }
 
 .card .data-price {
     color: #1564C0;
     font-size: 2rem;
+    font-weight: 5rem;
 }
 
 .card p {
