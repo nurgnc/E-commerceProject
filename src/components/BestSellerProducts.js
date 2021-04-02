@@ -1,12 +1,21 @@
 import React from 'react'
-import { FaArrowRight } from 'react-icons/fa'
+//Routing
 import { Link } from 'react-router-dom'
+//Data
 import bestSeller from "./data/bestSeller.json";
+//Styles
 import "./CardRelated.css";
+//Icons
 import { AiFillStar } from 'react-icons/ai'
+import { FaArrowRight } from 'react-icons/fa'
+//Slider
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+//Redux
+import { connect } from 'react-redux';
+import { addToCart } from '../store/actions/AddToCart';
+import { isHovering } from '../store/actions/IsHovering';
 
 
 function SampleNextArrow(props) {
@@ -31,7 +40,7 @@ function SamplePrevArrow(props) {
     );
 }
 
-const BestSellerProducts = () => {
+const BestSellerProducts = (props) => {
     const settings = {
         className: "slider variable-width",
         dots: true,
@@ -77,34 +86,44 @@ const BestSellerProducts = () => {
                 <p>Çok Satanlar</p>
                 <Link to="/coksatanlar"><button>TÜM ÇOK SATANLAR <FaArrowRight /></button></Link>
             </div>
-            <Slider {...settings} className="product container">
-                {bestSeller.map(data => {
+            <div onMouseEnter={() => props.isHovering(true)} onMouseLeave={() => props.isHovering(false)}>
+                <Slider {...settings} className="product container">
+                    {bestSeller.map(data => {
                         return (
                             <div className="card" key={data.code}>
                                 <Link to={`/${data.dest_url}`}>
-                                    <img src={data.img} alt={data.title}/>
+                                    <img src={data.img} alt={data.title} />
                                 </Link>
                                 <div className="content">
-                                    <p><span style={{color: "#ffab3d"}}><AiFillStar /> {data.rating}</span> ({data.comment} Yorum)</p>
+                                    <p><span style={{ color: "#ffab3d" }}><AiFillStar /> {data.rating}</span> ({data.comment} Yorum)</p>
                                     <p>{data.code}</p>
                                     <h6>
                                         <Link to={`/onecikanlar/${data.dest_url}`} style={{ textDecoration: "none" }}>
                                             {data.title}
                                         </Link>
                                     </h6>
-                                    
+
                                     <span className="data-price">&#8378; {data.price}</span>
-                                    <div style={{background: '#dbd5d5'}}>
-                                            {(data.samedayshipping = "true" ? "Bugün Kargoda" : "")}
-                                    </div>
+                                    <div className={`${props.hover ? "d-none": ""}`} style={{ background: '#dbd5d5' }}>
+                                    {(data.samedayshipping = "true" ? "Bugün Kargoda" : "")}
                                 </div>
-                                    
+                                <button className={`${props.hover ? "" : "d-none"}`} onClick={() => props.addToCart(data)}>SEPETE EKLE</button>
+                                </div>
+
                             </div>
                         )
-                })}
-            </Slider>
+                    })}
+                </Slider>
+            </div>
         </>
     )
 }
 
-export default BestSellerProducts
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart,
+        hover: state.hover
+    };
+};
+
+export default connect(mapStateToProps, { addToCart, isHovering })(BestSellerProducts)
