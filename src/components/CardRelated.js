@@ -13,7 +13,7 @@ const CardRelated = (props) => {
     return (
         <>
             <div className="product">
-                {relatedProducts.filter((data, idx) => idx < 3).map(data => {
+                {relatedProducts.filter((data, idx) => idx < 8).map(data => {
                         return (
                             <div className="card" key={data.code}>
                                 <Link to={`/onecikanlar/${data.dest_url}`}>

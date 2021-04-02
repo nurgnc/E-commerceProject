@@ -17,15 +17,6 @@ const RelatedProducts = () => {
                     <Col>
                         <CardRelated />
                     </Col>
-                    <Col>
-                        <CardRelated />
-                    </Col>
-                    <Col>
-                        <CardRelated />
-                    </Col>
-                    <Col>
-                        <CardRelated />
-                    </Col>
                 </Row>
             </div>
         </>
