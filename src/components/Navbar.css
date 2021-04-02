@@ -1,0 +1,55 @@
+.menu .item{
+    display: flex;
+    justify-content: space-between;
+    color: #575b61;
+}
+
+.menu .icon {
+    position: relative;
+    color: #1564C0;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.menu .icon-right {
+    color: #575b61;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.navbar .form .form-item{
+    background: #4c92e2;
+    border: none;
+    width: 20rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .form .form-item::placeholder {/* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:white;
+    opacity: 1;
+}
+
+.navbar .navbar-icon {
+    font-size: 1.1rem;
+    color:white;
+}
+
+.navbar .navcart {
+    margin-left: .8rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.navbar .navcart span {
+    position: absolute;
+    top: -9px;
+    right: -5px;
+    background: #e44646;
+    font-size: 10px;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: 1;
+}
