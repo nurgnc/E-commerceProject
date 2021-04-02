@@ -2,7 +2,6 @@ import React from 'react'
 import './RelatedProducts.css'
 import { FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap'
 import CardRelated from './CardRelated'
 
 const RelatedProducts = () => {
@@ -13,11 +12,7 @@ const RelatedProducts = () => {
                 <Link to="/onecikanlar"><button>TÜM ÖNE ÇIKANLAR <FaArrowRight /></button></Link>
             </div>
             <div className="products container">
-                <Row>
-                    <Col>
-                        <CardRelated />
-                    </Col>
-                </Row>
+                <CardRelated />
             </div>
         </>
     )

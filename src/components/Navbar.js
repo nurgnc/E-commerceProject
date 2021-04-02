@@ -1,7 +1,9 @@
 import React from 'react'
-import './Navbar.css'
 import { Link } from 'react-router-dom'
+//Styles
+import './Navbar.css'
 import { Nav, Navbar, Form, FormControl, Dropdown } from 'react-bootstrap';
+//Icons
 import { FaBars, FaUserCircle, FaShoppingCart} from 'react-icons/fa'
 import { IoIosPhonePortrait } from 'react-icons/io'
 import { MdComputer, MdMonochromePhotos } from 'react-icons/md'
@@ -9,6 +11,8 @@ import {  GiGamepad } from 'react-icons/gi'
 import { RiComputerLine } from 'react-icons/ri'
 import { FiCpu, FiHeadphones } from 'react-icons/fi'
 import { HiChevronRight, HiOutlineHome, HiOutlinePrinter } from 'react-icons/hi'
+//Redux
+import { connect } from 'react-redux';
 
 const NavBar = (props) => {
 
@@ -45,7 +49,7 @@ const NavBar = (props) => {
                     <Nav.Link className="text-light" href="#">Üyelik <FaUserCircle className="navbar-icon"/></Nav.Link>
                     <Nav.Link className="text-light" href="#">Sepetim 
                         <div className="navcart">
-                            <span>{props.count}</span>
+                            <span>{props.cart.length}</span>
                             <Link href="/cart"><FaShoppingCart className="navbar-icon"/></Link>
                         </div>
                     </Nav.Link>
@@ -55,4 +59,9 @@ const NavBar = (props) => {
     )
 }
 
-export default NavBar
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    };
+};
+export default connect(mapStateToProps)(NavBar);

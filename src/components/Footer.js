@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { MenuItems } from './Items/MenuItems';
 import { Corporate } from './Items/Corporate';
 import { SpecialProduct } from './Items/SpecialProduct';
+import { Col, Row } from 'react-bootstrap';
 
 const Footer = () => {
     return (
@@ -66,12 +67,21 @@ const Footer = () => {
                     </div>
                 </div>
                 <hr />
-                <div className="row">
-                    <div className="row">
-                        <p className="col-sm footer-link font-weight-bold">Türkiye'nin Teknoloji Hiperstoru</p>
-                        <p className="col-sm footer-link">Copyright {new Date().getFullYear()} Vatan Bilgisayar San. ve Tic. A.Ş.</p>
-                    </div>
-                </div>
+                <Row className="d-flex justify-content-around">
+                    <Row>
+                        <Col>
+                            <p className="col-sm footer-link font-weight-bold">Türkiye'nin Teknoloji Hiperstoru</p>
+                            <p className="col-sm footer-link">Copyright {new Date().getFullYear()} Vatan Bilgisayar San. ve Tic. A.Ş.</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <img className="m-2" height="40" src="https://shoplineimg.com/assets/footer/card_master.png"/>
+                            <img className="m-2" height="40" src="https://shoplineimg.com/assets/footer/card_visa.png"/>
+                            <img className="m-2" height="40" src="https://shoplineimg.com/assets/footer/card_amex.png"/>
+                        </Col>
+                    </Row>
+                </Row>
             </div>
         </div>
     )

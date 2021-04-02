@@ -3,13 +3,11 @@ import relatedProducts from './data/relatedProducts.json'
 import './CardRelated.css'
 import { Link } from "react-router-dom";
 import { AiFillStar } from 'react-icons/ai'
+//Redux
+import { connect } from 'react-redux';
+import { addToCart } from '../store/actions/AddToCart';
 
 const CardRelated = (props) => {
-    const [count, setCount] = useState(0);
-
-    const IncNum = () => {
-        setCount(count + 1);
-    }
     return (
         <>
             <div className="product">
@@ -32,7 +30,7 @@ const CardRelated = (props) => {
                                     <div style={{background: '#cac7c7'}}>
                                             {(data.samedayshipping = "true" ? "Bugün Kargoda" : "")}
                                     </div>
-                                    <button value={props.count} onClick={IncNum}>SEPETE EKLE</button>
+                                    <button onClick={() => props.addToCart(data)}>SEPETE EKLE</button>
                                 </div>
                                     
                             </div>
@@ -43,4 +41,10 @@ const CardRelated = (props) => {
     )
 }
 
-export default CardRelated
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    };
+};
+
+export default connect(mapStateToProps, {addToCart})(CardRelated)
